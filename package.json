@@ -7,7 +7,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
     "lint": "next lint",
     "start": "next start",
     "type-check": "tsc --noEmit",

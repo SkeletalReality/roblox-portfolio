@@ -22,15 +22,23 @@ const config = withPWA({
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
 
+  // ✅ Static export enabled
+  output: "export",
+
+  // ✅ Needed for static export (disables Next.js image optimization)
+  images: {
+    unoptimized: true,
+  },
+
   /**
    * If you are using `appDir` then you must comment the below `i18n` config out.
    *
    * @see https://github.com/vercel/next.js/issues/41980
    */
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
+  // i18n: {
+  //   locales: ["en"],
+  //   defaultLocale: "en",
+  // },
 });
 
 export default config;
