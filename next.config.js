@@ -5,6 +5,17 @@
 await import("./src/env.js");
 import WithPWA from "next-pwa";
 
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export', // tells Next.js to export static HTML
+  images: {
+    unoptimized: true, // prevents Next Image errors on export
+  },
+};
+
+module.exports = nextConfig;
+
+
 const withPWA = WithPWA({
   dest: "public",
   disable: process.env.NODE_ENV === "development",
