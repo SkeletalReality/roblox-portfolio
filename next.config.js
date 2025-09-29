@@ -18,10 +18,6 @@ const withPWA = WithPWA({
  */
 // @ts-ignore
 const config = withPWA({
-  output: 'export', // ✅ generates /out on build
-  images: {
-    unoptimized: true,
-  },
   reactStrictMode: true,
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
@@ -31,10 +27,10 @@ const config = withPWA({
    *
    * @see https://github.com/vercel/next.js/issues/41980
    */
-  // i18n: {
-  //   locales: ["en"],
-  //   defaultLocale: "en",
-  // },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 });
 
 export default config;
