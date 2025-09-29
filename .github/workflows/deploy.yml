@@ -1,8 +1,15 @@
-name: Deploy Next.js site to Pages
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
 
 on:
   push:
     branches: ["main"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 
 jobs:
   build:
