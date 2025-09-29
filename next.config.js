@@ -30,6 +30,10 @@ const config = withPWA({
     unoptimized: true,
   },
 
+  // ✅ Add this
+  basePath: "/roblox-portfolio",
+  assetPrefix: "/roblox-portfolio/",
+
   /**
    * If you are using `appDir` then you must comment the below `i18n` config out.
    *
