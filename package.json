@@ -5,14 +5,12 @@
   "type": "module",
   "homepage": "https://skeletalreality.github.io/roblox-portfolio",
   "scripts": {
-    "build": "next build",
     "dev": "next dev",
+    "build": "next build",
     "lint": "next lint",
     "start": "next start",
     "type-check": "tsc --noEmit",
-    "format": "prettier --write ./src/**/*.{ts,tsx,js,jsx,json,md}",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
+    "format": "prettier --write ./src/**/*.{ts,tsx,js,jsx,json,md}"
   },
   "dependencies": {
     "@motionone/utils": "^10.17.0",
