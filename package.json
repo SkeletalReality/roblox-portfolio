@@ -11,7 +11,7 @@
     "start": "next start",
     "type-check": "tsc --noEmit",
     "format": "prettier --write ./src/**/*.{ts,tsx,js,jsx,json,md}",
-    "predeploy": "npm run build && npm run export",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
