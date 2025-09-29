@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "homepage": "https://skeletalreality.github.io/roblox-portfolio",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
     "type-check": "tsc --noEmit",
-    "format": "prettier --write ./src/**/*.{ts,tsx,js,jsx,json,md}"
+    "format": "prettier --write ./src/**/*.{ts,tsx,js,jsx,json,md}",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@motionone/utils": "^10.17.0",
@@ -48,6 +51,7 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^8.54.0",
     "eslint-config-next": "^14.0.4",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.31",
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.7",

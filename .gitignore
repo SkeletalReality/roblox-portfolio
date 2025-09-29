@@ -44,3 +44,5 @@ yarn-error.log*
 # webstorm
 .idea
 ```
+# Local Netlify folder
+.netlify
