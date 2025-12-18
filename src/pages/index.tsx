@@ -28,7 +28,7 @@ import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 import ProjectCarousel from "@/components/ProjectCarousel";
 
-const prefix = "/public/assets/"
+const prefix = "/roblox-portfolio/assets/"
 
 
 const aboutStats = [
