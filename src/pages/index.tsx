@@ -28,6 +28,8 @@ import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 import ProjectCarousel from "@/components/ProjectCarousel";
 
+const prefix = "/public/assets/"
+
 
 const aboutStats = [
   { label: "Years of experience", value: "10+" },
@@ -39,7 +41,7 @@ const supercut = [
   {
     title: "Supercut",
     tooltip: "Download video!",
-    image: "/assets/supercut.webm",
+    image: prefix + "supercut.webm",
     href: "https://www.roblox.com/games/18758755773/Threadville-OUT-NOW"
   }
 ]
@@ -48,7 +50,7 @@ const presentationcut = [
   {
     title: "PresentationCut",
     tooltip: "Go to presentation!",
-    image: "/assets/presentation_cut.webm",
+    image: prefix + "presentation_cut.webm",
     href: "https://www.youtube.com/watch?v=OyuQPOQxck8",
     description: "Watch the presentation on YouTube!",
   }
@@ -58,28 +60,28 @@ const presentationpieces = [
   {
     title: "Orca",
     tooltip: "Download video!",
-    image: "/assets/openworlds/orca.webm",
+    image: prefix + "openworlds/orca.webm",
     href: "https://www.youtube.com/watch?v=OyuQPOQxck8",
     description: "Optimal Reciprocal Collision Avoidance (ORCA)",
   },
   {
     title: "Crowd Data",
     tooltip: "Download video!",
-    image: "/assets/openworlds/crowddata.webm",
+    image: prefix + "openworlds/crowddata.webm",
     href: "https://www.youtube.com/watch?v=OyuQPOQxck8",
     description: "Comparing to real life data for possible finetuning.",
   },
   {
     title: "Orca Cross",
     tooltip: "Download video!",
-    image: "/assets/openworlds/3dpathfinding.webm",
+    image: prefix + "openworlds/3dpathfinding.webm",
     href: "https://www.youtube.com/watch?v=OyuQPOQxck8",
     description: "3d pathfinding for flying NPCs.",
   },
   {
     title: "Orca Cross",
     tooltip: "Download video!",
-    image: "/assets/openworlds/orcacross.webm",
+    image: prefix + "openworlds/orcacross.webm",
     href: "https://www.youtube.com/watch?v=OyuQPOQxck8",
     description: "ORCA crowds crossing paths simulation.",
   }
@@ -89,13 +91,13 @@ const threadville = [
   {
     title: "Game",
     description: "Try it out on Roblox!",
-    image: "/assets/shed_kick.webm",
+    image: prefix + "shed_kick.webm",
     href: "https://www.roblox.com/games/18758755773/Threadville-OUT-NOW"
   },
   {
     title: "Trailer",
     description: "Watch the first trailer!",
-    image: "/assets/threadville_trailer.webm",
+    image: prefix + "threadville_trailer.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   }
 ]
@@ -105,14 +107,14 @@ const harpisles = [
     title: "Movement",
     //description: "Creature movement and foliage simulation",
     tooltip: "Download video!",
-    image: "/assets/harpisles/terrestrialdemo.webm",
+    image: prefix + "harpisles/terrestrialdemo.webm",
     href: "https://www.roblox.com/games/18758755773/Threadville-OUT-NOW"
   },
   {
     title: "UI",
     tooltip: "Download video!",
     //description: "Spawning, HUD and inventory UI",
-    image: "/assets/harpisles/harpui.webm",
+    image: prefix + "harpisles/harpui.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   }
 ]
@@ -122,35 +124,35 @@ const tps = [
     title: "Jumping",
     tooltip: "Download video!",
     //description: "Jumping",
-    image: "/assets/tps/jumping.webm",
+    image: prefix + "tps/jumping.webm",
     href: "https://www.roblox.com/games/18758755773/Threadville-OUT-NOW"
   },
   {
     title: "Splatter",
     tooltip: "Download video!",
     //description: "Shooting and splatter effects",
-    image: "/assets/tps/splatter.webm",
+    image: prefix + "tps/splatter.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   },
   {
     title: "Timer",
     tooltip: "Download video!",
     description: "Game timer",
-    image: "/assets/tps/timer.webm",
+    image: prefix + "tps/timer.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   },
   {
     title: "Pivoting",
     tooltip: "Download video!",
     description: "Dynamic pivoting foot motion",
-    image: "/assets/tps/pivot.webm",
+    image: prefix + "tps/pivot.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   },
   {
     title: "Covering",
     tooltip: "Download video!",
     description: "Automatic covering (calculated based on geometry)",
-    image: "/assets/tps/cover.webm",
+    image: prefix + "tps/cover.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   }
 ]
@@ -160,70 +162,70 @@ const misc = [
     title: "Skill Tree",
     tooltip: "Download video!",
     description: "Skill tree UI",
-    image: "/assets/skill_tree.webm",
+    image: prefix + "skill_tree.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   },
   {
     title: "Scifi Suit Construction",
     tooltip: "Download video!",
     description: "Scifi Suit Construction",
-    image: "/assets/scifisuitconstruction.webm",
+    image: prefix + "scifisuitconstruction.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   },
   {
     title: "Killcam Prototype",
     tooltip: "Download video!",
     description: "Killcam Prototype",
-    image: "/assets/killcamprototype.webm",
+    image: prefix + "killcamprototype.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   },
   {
     title: "Procedural House Construction",
     tooltip: "Download video!",
     description: "Procedural House Construction",
-    image: "/assets/medeivalhouseconstruction2.webm",
+    image: prefix + "medeivalhouseconstruction2.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   },
   {
     title: "Planetary HUD",
     tooltip: "Download video!",
     description: "Planetary HUD",
-    image: "/assets/planetaryhud.webm",
+    image: prefix + "planetaryhud.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   },
   {
     title: "Animated Mouth Articulation",
     tooltip: "Download video!",
     description: "Animated Mouth Articulation",
-    image: "/assets/moutharticulation.webm",
+    image: prefix + "moutharticulation.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   },
   {
     title: "Procedural Wendigo Arms",
     tooltip: "Download video!",
     description: "Procedural Wendigo Arms",
-    image: "/assets/wendigoarms.webm",
+    image: prefix + "wendigoarms.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   },
   {
     title: "Procedural Tool Holding",
     tooltip: "Download video!",
     description: "Procedural Tool Holding",
-    image: "/assets/tools.webm",
+    image: prefix + "tools.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   },
   {
     title: "Hair Dynamics",
     tooltip: "Download video!",
     description: "Hair Dynamics",
-    image: "/assets/hairdynamics.webm",
+    image: prefix + "hairdynamics.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   },
   {
     title: "Animated Pet Face",
     tooltip: "Download video!",
     description: "Animated Pet Face",
-    image: "/assets/animatedpetface.webm",
+    image: prefix + "animatedpetface.webm",
     href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
   }
 ]
@@ -352,7 +354,7 @@ export default function Home() {
             className={styles["spline-background"]}
           >
             <Suspense fallback={<span>Loading...</span>}>
-              <Spline scene="assets/skeletal.splinecode" />
+              <Spline scene={prefix + "skeletal.splinecode"} />
             </Suspense>
           </div>
 
@@ -497,7 +499,7 @@ export default function Home() {
               <div className="flex-shrink-0">
                 {/* Image */}
                 <Image
-                  src="/assets/aboutme.png"
+                  src={prefix + "aboutme.png"}
                   alt="aboutme"
                   width={300}
                   height={300}
@@ -527,7 +529,7 @@ export default function Home() {
             <div className="flex-shrink-0">
                 {/* Image */}
                 <Image
-                  src="/assets/allen-school-logo.jpg"
+                  src={prefix + "allen-school-logo.jpg"}
                   alt="aboutme"
                   width={300}
                   height={300}
