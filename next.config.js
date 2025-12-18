@@ -1,15 +1,19 @@
 /**
- * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
- * for Docker builds.
+ * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
  */
 await import("./src/env.js");
+
 import WithPWA from "next-pwa";
+
+const repoName = "roblox-portfolio"; // 👈 CHANGE IF NEEDED
 
 const withPWA = WithPWA({
   dest: "public",
   disable: process.env.NODE_ENV === "development",
+
+  // ✅ PWA must respect basePath on GitHub Pages
   register: true,
-  scope: "/",
+  scope: `/${repoName}/`,
   sw: "service-worker.js",
 });
 
@@ -22,23 +26,19 @@ const config = withPWA({
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
 
-  // ✅ Static export enabled
+  // ✅ REQUIRED for GitHub Pages
   output: "export",
 
-  // ✅ Needed for static export (disables Next.js image optimization)
+  // ✅ REQUIRED: GitHub Pages has no image optimizer
   images: {
     unoptimized: true,
   },
 
-  // ✅ Add this
-  // basePath: "/roblox-portfolio",
-  // assetPrefix: "/roblox-portfolio/",
+  // ✅ CRITICAL FIX (this was missing)
+  basePath: `/${repoName}`,
+  assetPrefix: `/${repoName}/`,
 
-  /**
-   * If you are using `appDir` then you must comment the below `i18n` config out.
-   *
-   * @see https://github.com/vercel/next.js/issues/41980
-   */
+  // ❌ i18n must stay disabled with appDir + export
   // i18n: {
   //   locales: ["en"],
   //   defaultLocale: "en",
