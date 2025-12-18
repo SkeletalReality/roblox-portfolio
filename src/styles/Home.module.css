@@ -1,10 +1,10 @@
 
 /* hero */
 .intro {
-    @apply flex flex-col items-start space-y-4 w-full;
+    @apply flex flex-col items-center space-y-3 w-fit max-w-md;
 }
 .pill {
-    @apply transition border border-input bg-background flex items-center text-xs px-2.5 py-1.5 rounded-full hover:-translate-y-1 hover:bg-primary hover:text-primary-foreground duration-300;
+    @apply transition border border-input bg-background flex items-center text-xs px-2 py-1 rounded-full hover:-translate-y-1 hover:bg-primary hover:text-primary-foreground duration-300;
 }
 .intro h1 {
     @apply pt-2 leading-tight;
@@ -30,4 +30,14 @@
 
     /* this fixes the overflow:hidden in Chrome/Opera */
     -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+
+/* spline background */
+.spline-background {
+    @apply absolute z-0 h-full;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
 }

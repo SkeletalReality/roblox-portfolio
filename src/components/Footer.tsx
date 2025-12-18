@@ -26,7 +26,7 @@ export default function Footer() {
     <footer className="w-full bg-gradient-to-t from-primary/[1%] to-transparent">
       <div className="container mx-auto flex flex-row items-center justify-between py-6">
         <span className="flex flex-row items-center space-x-4">
-          <p className="text-xs text-muted-foreground">
+          {/* <p className="text-xs text-muted-foreground">
             Made with ❤️ by{" "}
             <Link
               href="https://github.com/wendoj"
@@ -36,7 +36,7 @@ export default function Footer() {
             >
               wendoj
             </Link>
-          </p>
+          </p> */}
           <hr className="hidden h-6 border-l border-muted md:flex" />
           <span className="flex hidden flex-row items-center space-x-2 md:flex">
             <p className="text-xs text-muted-foreground">Local time:</p>
@@ -44,13 +44,13 @@ export default function Footer() {
           </span>
         </span>
         <Link
-          href="mailto:wendoj@proton.me"
+          href="mailto:skeletalreality4x5@gmail.com"
           passHref
           className="text-xs text-muted-foreground hover:text-foreground"
         >
           <Button variant={"outline"}>
             <MailIcon className="h-4 w-4 md:mr-2" />
-            <span className="hidden md:flex">wendoj@proton.me</span>
+            <span className="hidden md:flex">skeletalreality4x5@gmail.com</span>
           </Button>
         </Link>
       </div>

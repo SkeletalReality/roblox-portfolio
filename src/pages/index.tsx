@@ -26,75 +26,237 @@ import {
 } from "@/components/ui/carousel";
 import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
+import ProjectCarousel from "@/components/ProjectCarousel";
+
 
 const aboutStats = [
-  { label: "Years of experience", value: "3+" },
-  { label: "Technologies mastered", value: "5+" },
-  { label: "Companies worked with", value: "15+" },
+  { label: "Years of experience", value: "10+" },
+  { label: "Years with Luau", value: "4+" },
+  { label: "Technologies Mastered", value: "12+" },
 ];
 
-const projects = [
+const supercut = [
   {
-    title: "Unqueue",
-    description: "E-commerce platform for selling digital products",
-    image: "/assets/unqueue.webm",
-    href: "https://unqueue.shop/",
+    title: "Supercut",
+    tooltip: "Download video!",
+    image: "/assets/supercut.webm",
+    href: "https://www.roblox.com/games/18758755773/Threadville-OUT-NOW"
+  }
+]
+
+const presentationcut = [
+  {
+    title: "PresentationCut",
+    tooltip: "Go to presentation!",
+    image: "/assets/presentation_cut.webm",
+    href: "https://www.youtube.com/watch?v=OyuQPOQxck8",
+    description: "Watch the presentation on YouTube!",
+  }
+]
+
+const presentationpieces = [
+  {
+    title: "Orca",
+    tooltip: "Download video!",
+    image: "/assets/openworlds/orca.webm",
+    href: "https://www.youtube.com/watch?v=OyuQPOQxck8",
+    description: "Optimal Reciprocal Collision Avoidance (ORCA)",
   },
   {
-    title: "InfiniteVPS",
-    description: "High performance VPS hosting solution",
-    image: "/assets/infinitevps.webm",
-    href: "#",
+    title: "Crowd Data",
+    tooltip: "Download video!",
+    image: "/assets/openworlds/crowddata.webm",
+    href: "https://www.youtube.com/watch?v=OyuQPOQxck8",
+    description: "Comparing to real life data for possible finetuning.",
   },
   {
-    title: "TranslateBot",
-    description: "Powerful Multilingual Translation Bot for Discord",
-    image: "/assets/translate_bot.webm",
-    href: "https://translatebot.app/",
+    title: "Orca Cross",
+    tooltip: "Download video!",
+    image: "/assets/openworlds/3dpathfinding.webm",
+    href: "https://www.youtube.com/watch?v=OyuQPOQxck8",
+    description: "3d pathfinding for flying NPCs.",
   },
   {
-    title: "Wrona",
-    description: "Robotics-focused technology company",
-    image: "/assets/wrona.jpeg",
-    href: "https://www.wrona.com/",
+    title: "Orca Cross",
+    tooltip: "Download video!",
+    image: "/assets/openworlds/orcacross.webm",
+    href: "https://www.youtube.com/watch?v=OyuQPOQxck8",
+    description: "ORCA crowds crossing paths simulation.",
+  }
+]
+
+const threadville = [
+  {
+    title: "Game",
+    description: "Try it out on Roblox!",
+    image: "/assets/shed_kick.webm",
+    href: "https://www.roblox.com/games/18758755773/Threadville-OUT-NOW"
   },
   {
-    title: "This website",
-    description: "My personal website",
-    image: "/assets/portfolio.webm",
-    href: "https://github.com/wendoj/portfolio",
+    title: "Trailer",
+    description: "Watch the first trailer!",
+    image: "/assets/threadville_trailer.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  }
+]
+
+const harpisles = [
+  {
+    title: "Movement",
+    //description: "Creature movement and foliage simulation",
+    tooltip: "Download video!",
+    image: "/assets/harpisles/terrestrialdemo.webm",
+    href: "https://www.roblox.com/games/18758755773/Threadville-OUT-NOW"
   },
-];
+  {
+    title: "UI",
+    tooltip: "Download video!",
+    //description: "Spawning, HUD and inventory UI",
+    image: "/assets/harpisles/harpui.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  }
+]
+
+const tps = [
+  {
+    title: "Jumping",
+    tooltip: "Download video!",
+    //description: "Jumping",
+    image: "/assets/tps/jumping.webm",
+    href: "https://www.roblox.com/games/18758755773/Threadville-OUT-NOW"
+  },
+  {
+    title: "Splatter",
+    tooltip: "Download video!",
+    //description: "Shooting and splatter effects",
+    image: "/assets/tps/splatter.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  },
+  {
+    title: "Timer",
+    tooltip: "Download video!",
+    description: "Game timer",
+    image: "/assets/tps/timer.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  },
+  {
+    title: "Pivoting",
+    tooltip: "Download video!",
+    description: "Dynamic pivoting foot motion",
+    image: "/assets/tps/pivot.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  },
+  {
+    title: "Covering",
+    tooltip: "Download video!",
+    description: "Automatic covering (calculated based on geometry)",
+    image: "/assets/tps/cover.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  }
+]
+
+const misc = [
+  {
+    title: "Skill Tree",
+    tooltip: "Download video!",
+    description: "Skill tree UI",
+    image: "/assets/skill_tree.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  },
+  {
+    title: "Scifi Suit Construction",
+    tooltip: "Download video!",
+    description: "Scifi Suit Construction",
+    image: "/assets/scifisuitconstruction.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  },
+  {
+    title: "Killcam Prototype",
+    tooltip: "Download video!",
+    description: "Killcam Prototype",
+    image: "/assets/killcamprototype.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  },
+  {
+    title: "Procedural House Construction",
+    tooltip: "Download video!",
+    description: "Procedural House Construction",
+    image: "/assets/medeivalhouseconstruction2.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  },
+  {
+    title: "Planetary HUD",
+    tooltip: "Download video!",
+    description: "Planetary HUD",
+    image: "/assets/planetaryhud.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  },
+  {
+    title: "Animated Mouth Articulation",
+    tooltip: "Download video!",
+    description: "Animated Mouth Articulation",
+    image: "/assets/moutharticulation.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  },
+  {
+    title: "Procedural Wendigo Arms",
+    tooltip: "Download video!",
+    description: "Procedural Wendigo Arms",
+    image: "/assets/wendigoarms.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  },
+  {
+    title: "Procedural Tool Holding",
+    tooltip: "Download video!",
+    description: "Procedural Tool Holding",
+    image: "/assets/tools.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  },
+  {
+    title: "Hair Dynamics",
+    tooltip: "Download video!",
+    description: "Hair Dynamics",
+    image: "/assets/hairdynamics.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  },
+  {
+    title: "Animated Pet Face",
+    tooltip: "Download video!",
+    description: "Animated Pet Face",
+    image: "/assets/animatedpetface.webm",
+    href: "https://www.youtube.com/watch?v=X6ZASHzg9w0"
+  }
+]
 
 const services = [
   {
-    service: "Frontend Development",
+    service: "Languages",
     description:
-      "Creating stellar user interfaces and web experiences using the latest technologies.",
-    icon: Code2,
-  },
-  {
-    service: "UX Design",
-    description:
-      "Building intuitive, user-centric designs that drive engagement and conversion.",
+      "Luau, C, C++, C#, Java, Python, JavaScript, HTML/CSS, SQL, PHP.",
     icon: Frame,
   },
   {
-    service: "SEO Optimization",
+    service: "Technologies and Platforms",
     description:
-      "Enhancing your website's visibility in search engines for increased organic traffic.",
-    icon: SearchCheck,
+      "Rojo, Visual Studio, Git, Bash, Next, React, LaTeX, IntelliJ, Microsoft Office Suite, Adobe Suite, and more.",
+    icon: Code2,
   },
   {
-    service: "Responsive Design",
+    service: "Frontend Development",
     description:
-      "Designing websites that look and perform equally well on all devices and screen sizes.",
-    icon: MonitorSmartphone,
+      "Experienced in responsive UI/UX design and animation, and cross-platform support for mobile and consoles. Additional graphic design and 3D modeling experience for engineering support.",
+    icon: Code2,
   },
   {
     service: "Backend Development",
     description:
-      "Developing robust, scalable server-side logic for a wide range of web applications.",
+      "Experienced in backend development for Roblox games, including data storage, data handling, API integration, streaming services, and replication.",
+    icon: MonitorSmartphone,
+  },
+  {
+    service: "Deployment",
+    description:
+      "Experienced in hosting QA sessions, debugging under pressure and time constraints, hotfixing, LiveOps and player engagement strategies.",
     icon: Eye,
   },
 ];
@@ -181,108 +343,130 @@ export default function Home() {
         <section
           id="home"
           data-scroll-section
-          className="mt-40 flex w-full flex-col items-center xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-between"
+          className="relative mt-40 flex w-full flex-col items-center xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-center"
         >
-          <div className={styles.intro}>
-            <div
-              data-scroll
-              data-scroll-direction="horizontal"
-              data-scroll-speed=".09"
-              className="flex flex-row items-center space-x-1.5"
-            >
-              <span className={styles.pill}>next.js</span>
-              <span className={styles.pill}>tailwindcss</span>
-              <span className={styles.pill}>typescript</span>
-            </div>
-            <div>
-              <h1
-                data-scroll
-                data-scroll-enable-touch-speed
-                data-scroll-speed=".06"
-                data-scroll-direction="horizontal"
-              >
-                <span className="text-6xl tracking-tighter text-foreground 2xl:text-8xl">
-                  Hello, I&apos;m
-                  <br />
-                </span>
-                <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
-                  WendoJ.
-                </span>
-              </h1>
-              <p
-                data-scroll
-                data-scroll-enable-touch-speed
-                data-scroll-speed=".06"
-                className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
-              >
-                An experienced full-stack website developer with a passion for
-                crafting unique digital experiences.
-              </p>
-            </div>
-            <span
-              data-scroll
-              data-scroll-enable-touch-speed
-              data-scroll-speed=".06"
-              className="flex flex-row items-center space-x-1.5 pt-6"
-            >
-              <Link href="mailto:wendoj@proton.me" passHref>
-                <Button>
-                  Get in touch <ChevronRight className="ml-1 h-4 w-4" />
-                </Button>
-              </Link>
-              <Button
-                variant="outline"
-                onClick={() => scrollTo(document.querySelector("#about"))}
-              >
-                Learn more
-              </Button>
-            </span>
-
-            <div
-              className={cn(
-                styles.scroll,
-                isScrolled && styles["scroll--hidden"],
-              )}
-            >
-              Scroll to discover{" "}
-              <TriangleDownIcon className="mt-1 animate-bounce" />
-            </div>
-          </div>
+          {/* Spline Background */}
           <div
             data-scroll
             data-scroll-speed="-.01"
-            id={styles["canvas-container"]}
-            className="mt-14 h-full w-full xl:mt-0"
+            className={styles["spline-background"]}
           >
             <Suspense fallback={<span>Loading...</span>}>
-              <Spline scene="/assets/scene.splinecode" />
+              <Spline scene="assets/skeletal.splinecode" />
             </Suspense>
+          </div>
+
+          {/* Content */}
+          <div className="flex items-start justify-center h-screen pt-20">
+            <div className={`${styles.intro} relative z-10`}>
+              <div
+                data-scroll
+                data-scroll-direction="horizontal"
+                data-scroll-speed=".09"
+                className="flex flex-row items-center space-x-1.5"
+              >
+                <span className={styles.pill}>Full Stack Developer</span>
+                <span className={styles.pill}>3D Modeller</span>
+                <span className={styles.pill}>UI/UX Designer</span>
+              </div>
+              <div>
+                <h1
+                  data-scroll
+                  data-scroll-enable-touch-speed
+                  data-scroll-speed=".06"
+                  data-scroll-direction="horizontal"
+                >
+                  <span className="text-6xl tracking-tighter text-foreground 2xl:text-8xl">
+                    Hello, I&apos;m
+                    <br />
+                  </span>
+                  <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
+                    SkeletalReality.
+                  </span>
+                </h1>
+                <p
+                  data-scroll
+                  data-scroll-enable-touch-speed
+                  data-scroll-speed=".06"
+                  className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
+                >
+                  An experienced programmer on the Roblox platform with a passion for
+                  bringing cutting edge experiences to the platform.
+                </p>
+              </div>
+              <span
+                data-scroll
+                data-scroll-enable-touch-speed
+                data-scroll-speed=".06"
+                className="flex flex-row items-center space-x-1.5 pt-6"
+              >
+                <Link href="mailto:skeletalreality4x5@gmail.com" passHref>
+                  <Button>
+                    Get in touch <ChevronRight className="ml-1 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Button
+                  variant="outline"
+                  onClick={() => scrollTo(document.querySelector("#about"))}
+                >
+                  Learn more
+                </Button>
+              </span>
+
+            </div>
+          </div>
+          
+          <div
+            className={cn(
+              styles.scroll,
+              isScrolled && styles["scroll--hidden"],
+            )}
+          >
+            Scroll to discover{" "}
+            <TriangleDownIcon className="mt-1 animate-bounce" />
           </div>
         </section>
 
-        {/* About */}
+        {/* About Roblox */}
         <section id="about" data-scroll-section>
           <div
             data-scroll
             data-scroll-speed=".4"
             data-scroll-position="top"
-            className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
+            className="my-14 flex w-full flex-col items-center justify-center space-y-10"
           >
-            <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]">
-              I&apos;m an experienced full-stack developer proficient in{" "}
-              <Link
-                href="https://create.t3.gg/"
-                target="_blank"
-                className="underline"
-              >
-                TypeScript, Tailwind, and Next.js
-              </Link>{" "}
-              since 2021. My experience spans from startups to mid-sized
-              companies, where I&apos;ve been instrumental in the entire product
-              design process; from ideation and wireframing, through
-              prototyping, to the delivery of the final product, all while
-              efficiently collaborating with cross-functional teams.
-            </h2>
+            <div className="flex w-full flex-col items-center space-y-8">
+              <div className="flex w-full justify-center">
+                {/* Threadville Carousel */}
+                <div className="relative w-full max-w-4xl [&>div]:mt-0">
+                  <div className="flex justify-center">
+                    <ProjectCarousel
+                      items={supercut}
+                      setApi={setCarouselApi}
+                      className="w-full max-w-2xl"
+                      mdBasis="1/"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex w-full justify-center px-4">
+                <h2 className="py-16 pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px] max-w-4xl text-center">
+                  I&apos;m an experienced full-stack developer proficient in{" "}
+                  <Link
+                    href="create.roblox.com"
+                    target="_blank"
+                    className="underline"
+                  >
+                    Roblox Studio
+                  </Link>{""}
+                  . I work to bring cutting edge technology to several genres of
+                  Roblox games and try to accomplish what has not yet been achieved
+                  on the platform. I have advanced proficiency in programming, UI/UX design,
+                  and mathematics, as well as collaborative skills, to bring the technical
+                  features that are needed and more.
+                </h2>
+              </div>
+            </div>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
               {aboutStats.map((stat) => (
                 <div
@@ -301,7 +485,73 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects */}
+        {/* About Me */}
+        <section id="aboutpersonal" data-scroll-section>
+          <div
+            data-scroll
+            data-scroll-speed=".4"
+            data-scroll-position="top"
+            className="my-14 flex w-full flex-col items-center justify-center space-y-10"
+          >
+            <div className="flex max-w-6xl mx-auto flex-row items-center space-y-2">
+              <div className="flex-shrink-0">
+                {/* Image */}
+                <Image
+                  src="/assets/aboutme.png"
+                  alt="aboutme"
+                  width={300}
+                  height={300}
+                  className="rounded-lg shadow-lg"
+                  priority
+                />
+                <p className="text-sm text-gray-500 mt-2 text-center">
+                  Me at Roblox Developers Conference 2024! :D
+                </p>
+              </div>
+              <div className="flex-1 px-6">
+                <h2 className="py-16 pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[35px] max-w-4xl text-left">
+                  I have always had a deep interest in computer science and game development! I am nearing graduation from the{" "}
+                  <Link
+                    href="https://www.cs.washington.edu/"
+                    target="_blank"
+                    className="underline"
+                  >
+                    Paul Allen School in University of Washington, Seattle
+                  </Link>{""}
+                  , and I am now looking for freelance or full-time work (40hrs/week).
+                  I am motivated to bring my skills to the table and help you achieve goals
+                  expressed by teams on the Roblox platform.
+                </h2>
+              </div>
+            </div>
+            <div className="flex-shrink-0">
+                {/* Image */}
+                <Image
+                  src="/assets/allen-school-logo.jpg"
+                  alt="aboutme"
+                  width={300}
+                  height={300}
+                  className="rounded-lg shadow-lg"
+                  priority
+                />
+              </div>
+            <div className="grid grid-cols-2 gap-8 xl:grid-cols-1">
+              <div
+                key="allen-school"
+                className="col-span-2 xl:col-span-1 flex flex-col items-center text-center"
+              >
+                <span className="clash-grotesk text-gradient text-4xl font-semibold tracking-tight xl:text-4xl">
+                  B.S. Computer Science
+                </span>
+                <span className="tracking-tight text-muted-foreground xl:text-lg">
+                  Expected Graduation: June 2026
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Threadville */}
         <section id="projects" data-scroll-section>
           {/* Gradient */}
           <div className="relative isolate -z-10">
@@ -320,64 +570,224 @@ export default function Home() {
           </div>
           <div data-scroll data-scroll-speed=".4" className="my-64">
             <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
-              ✨ Projects
+              ✨ Favorite Project
             </span>
             <h2 className="mt-3 text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
-              Streamlined digital experiences.
+              Threadville is one of my games!
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              I&apos;ve worked on a variety of projects, from small websites to
-              large-scale web applications. Here are some of my favorites:
+              I worked alongside an incredibly talented team of three to bring this story game to life. Threadville tells a linear story that brings unique characters and a wonderful IP to life.
             </p>
 
-            {/* Carousel */}
-            <div className="mt-14">
-              <Carousel setApi={setCarouselApi} className="w-full">
-                <CarouselContent>
-                  {projects.map((project) => (
-                    <CarouselItem key={project.title} className="md:basis-1/2">
-                      <Card id="tilt">
-                        <CardHeader className="p-0">
-                          <Link href={project.href} target="_blank" passHref>
-                            {project.image.endsWith(".webm") ? (
-                              <video
-                                src={project.image}
-                                autoPlay
-                                loop
-                                muted
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
-                            ) : (
-                              <Image
-                                src={project.image}
-                                alt={project.title}
-                                width={600}
-                                height={300}
-                                quality={100}
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
-                            )}
-                          </Link>
-                        </CardHeader>
-                        <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
-                          <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
-                            {project.description}
-                          </CardTitle>
-                        </CardContent>
-                      </Card>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
-              <div className="py-2 text-center text-sm text-muted-foreground">
-                <span className="font-semibold">
-                  {current} / {count}
-                </span>{" "}
-                projects
+            {/* Threadville Carousel */}
+            <ProjectCarousel
+              items={threadville}
+              setApi={setCarouselApi}
+            />
+          </div>
+        </section>
+
+        {/* Presentation */}
+        <section id="threadville" data-scroll-section>
+          {/* Gradient */}
+          <div className="relative isolate -z-10">
+            <div
+              className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-[100px] sm:-top-80 lg:-top-60"
+              aria-hidden="true"
+            >
+              <div
+                className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary via-primary to-secondary opacity-10 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                style={{
+                  clipPath:
+                    "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+                }}
+              />
+            </div>
+          </div>
+          <div data-scroll data-scroll-speed=".4" className="my-64">
+            <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
+              ✨ Presentation
+            </span>
+            <h2 className="mt-3 text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
+              Lifelike Open Worlds at RDC
+            </h2>
+            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
+                I did a talk at Roblox Developers Conference 2024 about how to use industry standard algorithms for NPC AIs to bring lifelike open worlds to Roblox.
+                <br />
+                <br />
+                I implemented algorithms used by games like Horizon Zero Dawn to have quickly reactive and realistic avoidance of dynamic obstacles. One such algorithm is Optimal Reciprocal Collision Avoidance (ORCA),
+                which allows NPCs to calculate the best direction to move to reduce crowd congestion without central coordination. The NPCs take both position and velocity into account to avoid collisions, allowing for
+                realistic avoidance that we would see in real life between humans.
+                <br />
+                <br />
+                This presentation also features a demonstration of 3d pathfinding by generating a navmesh from the world and having NPCs perform an A* algorithm to find the shortest path.
+                Several optimization are made to have this perform well even with 50 flying NPCs in the world. For example, the navmesh is divided into chunks, the A* heuristic is limited to certain segments, and the closest
+                point on the navmesh to the NPC in world space is found using a kd-tree.
+                <br />
+                <br />
+                There is a lot of complexity in data structures and algorithms, but the results ultimately lead to very enjoyable and realistic NPCs, from ones that can avoid crowd congestion to one that can fly through caves
+                and complex terrain to get to their destination.
+            </p>
+          <div className="flex w-full flex-col items-center space-y-8">
+            <div className="flex w-full justify-center">
+              {/* Presentation Cut Carousel */}
+              <div className="relative w-full max-w-4xl [&>div]:mt-0">
+                <div className="flex justify-center">
+                  <ProjectCarousel
+                    items={presentationcut}
+                    setApi={setCarouselApi}
+                    className="w-full max-w-2xl"
+                    mdBasis="1/"
+                  />
+                </div>
               </div>
             </div>
+          </div>
+
+            {/* Presentation Pieces Carousel */}
+            <ProjectCarousel
+              items={presentationpieces}
+              setApi={setCarouselApi}
+              mdBasis="1/2"
+              showCounter={true}
+            />
+          </div>
+        </section>
+
+        {/* Harp Isles */}
+        <section id="harpisles" data-scroll-section>
+          {/* Gradient */}
+          <div className="relative isolate -z-10">
+            <div
+              className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-[100px] sm:-top-80 lg:-top-60"
+              aria-hidden="true"
+            >
+              <div
+                className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary via-primary to-secondary opacity-10 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                style={{
+                  clipPath:
+                    "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+                }}
+              />
+            </div>
+          </div>
+          <div data-scroll data-scroll-speed=".4" className="my-64">
+            <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
+              ✨ Harp Isles
+            </span>
+            <h2 className="mt-3 text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
+              Harp Isles
+            </h2>
+            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
+                Harp Isles is a scifi creature survival game that features procdural movement of creature rigs and some UI that I definitely wanted to go all out on.
+            </p>
+          <div className="flex w-full flex-col items-center space-y-8">
+            <div className="flex w-full justify-center">
+              {/* Harp Isles Carousel */}
+              <div className="relative w-full max-w-6xl [&>div]:mt-0">
+                <div className="flex justify-center">
+                  <ProjectCarousel
+                    items={harpisles}
+                    setApi={setCarouselApi}
+                    className="w-full max-w-8xl"
+                    mdBasis="1/2"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+
+        {/* TPS System */}
+        <section id="harpisles" data-scroll-section>
+          {/* Gradient */}
+          <div className="relative isolate -z-10">
+            <div
+              className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-[100px] sm:-top-80 lg:-top-60"
+              aria-hidden="true"
+            >
+              <div
+                className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary via-primary to-secondary opacity-10 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                style={{
+                  clipPath:
+                    "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+                }}
+              />
+            </div>
+          </div>
+          <div data-scroll data-scroll-speed=".4" className="my-64">
+            <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
+              ✨ TPS System
+            </span>
+            <h2 className="mt-3 text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
+              TPS System
+            </h2>
+            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
+                A third-person shooter system using 100% procedural animation.
+            </p>
+          <div className="flex w-full flex-col items-center space-y-8">
+            <div className="flex w-full justify-center">
+              {/* TPS System Carousel */}
+              <div className="relative w-full max-w-6xl [&>div]:mt-0">
+                <div className="flex justify-center">
+                  <ProjectCarousel
+                    items={tps}
+                    setApi={setCarouselApi}
+                    className="w-full max-w-8xl"
+                    mdBasis="1/2"
+                    showCounter={true}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+
+        {/* More Projects */}
+        <section id="harpisles" data-scroll-section>
+          {/* Gradient */}
+          <div className="relative isolate -z-10">
+            <div
+              className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-[100px] sm:-top-80 lg:-top-60"
+              aria-hidden="true"
+            >
+              <div
+                className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary via-primary to-secondary opacity-10 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                style={{
+                  clipPath:
+                    "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+                }}
+              />
+            </div>
+          </div>
+          <div data-scroll data-scroll-speed=".4" className="my-64">
+            <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
+              ✨ More Projects
+            </span>
+            <h2 className="mt-3 text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
+              More Projects
+            </h2>
+            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
+                A bunch of other things I've worked on!
+            </p>
+          <div className="flex w-full flex-col items-center space-y-8">
+            <div className="flex w-full justify-center">
+              {/* TPS System Carousel */}
+              <div className="relative w-full max-w-6xl [&>div]:mt-0">
+                <div className="flex justify-center">
+                  <ProjectCarousel
+                    items={misc}
+                    setApi={setCarouselApi}
+                    className="w-full max-w-8xl"
+                    mdBasis="1/2"
+                    showCounter={true}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
           </div>
         </section>
 
@@ -401,15 +811,14 @@ export default function Home() {
             >
               <div className="flex flex-col py-6 xl:p-6">
                 <h2 className="text-4xl font-medium tracking-tight">
-                  Need more info?
+                  More about me!
                   <br />
-                  <span className="text-gradient clash-grotesk tracking-normal">
+                  {/* <span className="text-gradient clash-grotesk tracking-normal">
                     I got you.
-                  </span>
+                  </span> */}
                 </h2>
                 <p className="mt-2 tracking-tighter text-secondary-foreground">
-                  Here are some of the services I offer. If you have any
-                  questions, feel free to reach out.
+                  Here are my qualifications in more detail, from platforms and technologies to my skills and experience.
                 </p>
               </div>
               {services.map((service) => (
@@ -446,7 +855,7 @@ export default function Home() {
               I&apos;m currently available for freelance work and open to
               discussing new projects.
             </p>
-            <Link href="mailto:wendoj@proton.me" passHref>
+            <Link href="mailto:skeletalreality4x5@gmail.com" passHref>
               <Button className="mt-6">Get in touch</Button>
             </Link>
           </div>
