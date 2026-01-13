@@ -656,8 +656,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Harp Isles */}
-        <section id="harpisles" data-scroll-section>
+        {/* Creature Survival System */}
+        <section id="creature-survival-system" data-scroll-section>
           {/* Gradient */}
           <div className="relative isolate -z-10">
             <div
@@ -675,17 +675,17 @@ export default function Home() {
           </div>
           <div data-scroll data-scroll-speed=".4" className="my-64">
             <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
-              ✨ Harp Isles
+              ✨ Creature Survival System
             </span>
             <h2 className="mt-3 text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
-              Harp Isles
+              Creature Survival System
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-                Harp Isles is a scifi creature survival game that features procdural movement of creature rigs and some UI that I definitely wanted to go all out on.
+                A system for a scifi creature survival game that features procdural movement of creature rigs and some UI that I definitely wanted to go all out on.
             </p>
           <div className="flex w-full flex-col items-center space-y-8">
             <div className="flex w-full justify-center">
-              {/* Harp Isles Carousel */}
+              {/* Creature Survival Carousel */}
               <div className="relative w-full max-w-6xl [&>div]:mt-0">
                 <div className="flex justify-center">
                   <ProjectCarousel
@@ -702,7 +702,7 @@ export default function Home() {
         </section>
 
         {/* TPS System */}
-        <section id="harpisles" data-scroll-section>
+        <section id="tps-system" data-scroll-section>
           {/* Gradient */}
           <div className="relative isolate -z-10">
             <div
@@ -720,17 +720,17 @@ export default function Home() {
           </div>
           <div data-scroll data-scroll-speed=".4" className="my-64">
             <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
-              ✨ TPS System
+              ✨ Third Person Shooter System
             </span>
             <h2 className="mt-3 text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
-              TPS System
+              Third Person Shooter System
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
                 A third-person shooter system using 100% procedural animation.
             </p>
           <div className="flex w-full flex-col items-center space-y-8">
             <div className="flex w-full justify-center">
-              {/* TPS System Carousel */}
+              {/* Third Person Shooter System Carousel */}
               <div className="relative w-full max-w-6xl [&>div]:mt-0">
                 <div className="flex justify-center">
                   <ProjectCarousel
@@ -748,7 +748,7 @@ export default function Home() {
         </section>
 
         {/* More Projects */}
-        <section id="harpisles" data-scroll-section>
+        <section id="more-projects" data-scroll-section>
           {/* Gradient */}
           <div className="relative isolate -z-10">
             <div
@@ -776,7 +776,7 @@ export default function Home() {
             </p>
           <div className="flex w-full flex-col items-center space-y-8">
             <div className="flex w-full justify-center">
-              {/* TPS System Carousel */}
+              {/* More Projects Carousel */}
               <div className="relative w-full max-w-6xl [&>div]:mt-0">
                 <div className="flex justify-center">
                   <ProjectCarousel
